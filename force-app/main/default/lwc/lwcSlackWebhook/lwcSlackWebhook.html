@@ -1,0 +1,25 @@
+<template>
+    <template if:true={processing}>
+        <lightning-spinner
+          alternative-text="Loading"
+          size="small"
+        ></lightning-spinner>
+      </template>
+
+    <form class="slds-p-around_medium slds-card" onsubmit={submitHandler}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" class="slds-p-around_xx-small">
+                <h2 class="slds-text-heading_large slds-text-align_left">Webhook</h2>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" class="slds-p-around_xx-small">
+                <lightning-textarea  label="Slack Message" name="textarea_2" value={formData.textarea_2} variant="standard" data-id="message"  onchange={changeHandler}></lightning-textarea>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" class="slds-p-around_xx-small">
+                <lightning-button variant="brand" label="Send" title="Send" type="submit"  disabled={uploadDisabled} ></lightning-button>
+                <lightning-button variant="brand-outline" label="Clear" title="Clear" type="button" class="slds-var-m-around_small" onclick={handleClear}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+     </form>
+     
+     
+</template>
